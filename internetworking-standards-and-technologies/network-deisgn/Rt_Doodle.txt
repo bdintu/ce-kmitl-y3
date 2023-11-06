@@ -1,0 +1,17 @@
+en
+conf t
+hostname Rt_Doodle
+int f0/0
+ip add 111.111.111.1 255.255.255.0
+no sh
+int s0/0
+ip add 66.66.66.2 255.255.255.252
+no sh
+int s0/1
+ip add 111.111.112.121 255.255.255.252
+no sh
+ip route 33.33.33.0 255.255.255.0 s0/1
+router eigrp 100
+no auto-summary
+network 111.111.111.0
+network 66.66.66.0

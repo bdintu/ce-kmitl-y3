@@ -1,0 +1,50 @@
+totoal = cap + int
+balan = total * totoal
+gain = 0
+tmp = cap + int
+asset = tmp * tmp
+grow = gain + 3
+net = ass + grow
+
+# Common sub-expression elimination (1 คะแนน )
+totoal = cap + int
+balan = total * totoal
+gain = 0
+//tmp = total
+asset = tmp * tmp
+grow = gain + 3
+net = ass + grow
+
+# Copy propagation (1 คะแนน )
+totoal = cap + int
+balan = total * totoal
+gain = 0
+tmp = total
+//asset = total * total
+//grow = 0 + 3
+//net = ass + grow
+
+# Constant folding (1 คะแนน )
+totoal = cap + int
+balan = total * totoal
+gain = 0
+tmp = total
+asset = total * total
+//grow = 3
+net = ass + grow
+
+# Dead code(1 คะแนน )
+totoal = cap + int
+balan = total * totoal
+--gain = 0
+--tmp = total
+asset = total * total
+grow = 3
+net = ass + grow
+
+# final (2 คะแนน)
+totoal = cap + int
+balan = total * totoal
+--asset = balan
+--grow = 3
+net = balan + 3

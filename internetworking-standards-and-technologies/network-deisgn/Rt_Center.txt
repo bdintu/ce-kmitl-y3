@@ -1,0 +1,16 @@
+en
+conf t
+hostname Rt_Center
+int s0/0
+ip add 66.66.66.10 255.255.255.252
+no sh
+int s0/1
+ip add 192.168.6.14 255.255.255.252
+no sh
+router eigrp 100
+redistribute ospf 100 metric 1000 100 255 1 1500
+network 66.66.66.8
+router ospf 100
+log-adjacency-changes
+redistribute eigrp 100 metric 1 subnets
+network 192.168.6.12 0.0.0.3 area 0

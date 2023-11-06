@@ -1,0 +1,2 @@
+no:1	rule:1	con:s |- X : T		fact: S |- 
+no:2	rule:2	con:s |- f(float)	fact: s|- f(float) : U

@@ -1,0 +1,14 @@
+en
+vlan database
+vlan 10 name Dev
+vlan 20 name Design
+exit
+conf t
+hostname Sw_Company
+vtp do vtp
+vtp mo t
+vtp ve 2
+int f0/2
+sw mo tr
+int f0/3
+sw mo tr

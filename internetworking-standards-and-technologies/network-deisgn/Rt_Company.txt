@@ -1,0 +1,26 @@
+en
+conf t
+hostname Rt_Company
+int f0/1
+no sh
+int f0/1.10
+description Vlan-Dev
+en do 10
+ip add 192.168.1.30 255.255.255.224
+int f0/1.20
+description Vlan-Design
+en do 20
+ip add 192.168.1.62 255.255.255.224
+int s0/0
+ip add 192.168.6.2 255.255.255.252
+no sh
+int s0/1
+ip add 192.168.6.9 255.255.255.252
+no sh
+int f0/0
+ip add 192.168.1.98 255.255.255.252
+no sh
+router ospf 100
+network 192.168.6.0 0.0.0.3 area 0
+network 192.168.6.8 0.0.0.3 area 0
+network 192.168.1.96 0.0.0.3 area 0

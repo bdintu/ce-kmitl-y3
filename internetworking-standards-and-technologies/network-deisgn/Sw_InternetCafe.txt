@@ -1,0 +1,5 @@
+en
+conf t
+hostname Sw_InternetCafe
+int f0/24
+no sh

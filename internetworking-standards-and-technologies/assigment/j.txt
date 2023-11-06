@@ -1,0 +1,32 @@
+en
+conf t
+enable secret CiscoTech
+interface fa0/0
+no sh
+interface s0/0/0
+encapsulation ppp
+ip nat inside
+interface s0/0/1
+encapsulation ppp
+ip nat outside
+ex
+ip route 0.0.0.0 0.0.0.0 s0/0/1
+ex
+
+
+
+en
+conf t
+ip dhcp pool R1_LAN
+default-route 10.1.0.1
+dns-server 10.2.0.25
+ex
+router rip
+network 10.1.0.0
+network 172.16.0.0
+ex
+interface fa0/0
+no sh
+ex
+ex
+copy runn startup-config

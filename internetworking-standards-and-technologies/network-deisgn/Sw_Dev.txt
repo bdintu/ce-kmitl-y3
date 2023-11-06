@@ -1,0 +1,19 @@
+en
+vlan database
+vlan 10 name Dev
+vlan 20 name Design
+exit
+conf t
+hostname Sw_Dev
+vtp do vtp
+vtp mo s
+vtp ve 2
+int f0/24
+sw mo tr
+no sh
+int range f0/1-8
+sw mo ac
+sw ac v 10
+int range f0/9-15
+sw mo ac
+sw ac v 20

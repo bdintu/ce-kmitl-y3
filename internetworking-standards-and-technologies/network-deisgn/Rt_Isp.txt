@@ -1,0 +1,17 @@
+en
+conf t
+hostname Rt_Isp
+int s0/0
+ip add 66.66.66.1 255.255.255.252
+no sh
+int s0/1
+ip add 66.66.66.5 255.255.255.252
+no sh
+int s0/2
+ip add 66.66.66.9 255.255.255.252
+no sh
+router eigrp 100
+no auto-summary
+network 66.66.66.0
+network 66.66.66.4
+network 66.66.66.8
